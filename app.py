@@ -8,12 +8,13 @@ import tempfile
 from IPython.display import Audio
 import pygame
 import imageio
-import threading
+from dotenv import load_dotenv
 
 # Initialize pygame mixer
 pygame.mixer.init()
+load_dotenv()
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 
 
 # Function to convert video to GIF
